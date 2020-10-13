@@ -56,7 +56,7 @@ function SWEP:Initialize()
         
 
         if CLIENT then
-                print("modelset")
+                ////print("modelset")
 	        self.ModelEntity = ClientsideModel(self.WorldModel)
                 self.ModelEntity:SetNoDraw(true)
                
@@ -136,7 +136,7 @@ function SWEP:PrimaryAttack()
 
         
         tr = self.Owner:GetEyeTrace()
-        print(tr.Entity)
+        //print(tr.Entity)
 
         ply = tr.Entity
         
@@ -145,7 +145,7 @@ function SWEP:PrimaryAttack()
         if tr.Entity:IsPlayer()  and ply:Alive() then 
 
                 
-                print("stuff happening")
+                //print("stuff happening")
 
                 ply:GiveEquipmentItem(EQUIP_ARMOR)
                 ply:Give("weapon_ttt_wtester")
@@ -188,12 +188,12 @@ function SWEP:SecondaryAttack()
         
         if SERVER then
 
-                print("giving items")
+                //print("giving items")
                 ply:GiveEquipmentItem(EQUIP_ARMOR)
                 ply:Give("weapon_ttt_wtester")
                 ply = self.Owner
 
-                print(ply)
+                //print(ply)
 
                 if !ply:IsActiveDetective()  and GetConVar("ttt_detective_hats"):GetBool() then
 
@@ -229,7 +229,7 @@ function SWEP:Think()
         ply = self.Owner
         vel = self.Owner:GetVelocity()
         
-        //print(owner)
+        ////print(owner)
 
         
 
