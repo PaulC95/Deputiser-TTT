@@ -187,11 +187,12 @@ end
 function SWEP:SecondaryAttack() 
         
         if SERVER then
-
+        
+                
+                ply = self.Owner
                 //print("giving items")
                 ply:GiveEquipmentItem(EQUIP_ARMOR)
                 ply:Give("weapon_ttt_wtester")
-                ply = self.Owner
 
                 //print(ply)
 
@@ -224,25 +225,6 @@ function SWEP:SecondaryAttack()
         
 end
 
-function SWEP:Think()
-
-        ply = self.Owner
-        vel = self.Owner:GetVelocity()
-        
-        ////print(owner)
-
-        
-
-        if vel.z < -250 then
-                upvel = Vector(0,0,15)
-
-                ply:SetVelocity(upvel)
-        end
-        
-        
-        self.Weapon:NextThink(CurTime())
-
-end
 
 help_spec = {text = "", font = "TabLarge", xalign = TEXT_ALIGN_CENTER}
 
